@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "esnext",
+		"outDir": "./dist",
+		"moduleResolution": "node",
+		"jsx": "react-jsx",
+		"strict": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"sourceMap": true,
+		"lib": ["DOM", "DOM.Iterable", "ES6"],
+		"baseUrl": ".",
+		"paths": {
+			"components/*": ["src/components/*"]
+		}
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "commonjs"
+		}
+	},
+	"include": [
+		"src",
+		"src/**/*.ts",
+		"tests/**/*.ts",
+		"webpack-dev.config.ts",
+		"eslint.config.mts"
+	],
+	"exclude": ["node_modules"]
+}

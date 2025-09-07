@@ -1,20 +1,69 @@
 {
-  "name": "my-todos",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router": "^7.8.2"
-  }
+	"name": "my-todos",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"main": "index.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "webpack-dev-server --config webpack-dev.config.ts",
+		"build:dev": "webpack --config webpack-dev.config.ts",
+		"prepare": "husky",
+		"lint": "eslint . --ext .js,.ts,.tsx --fix",
+		"format": "prettier . --write"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts,tsx}": [
+			"npm run lint",
+			"npm run format",
+			"git add ."
+		]
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.7",
+		"react": "^19.1.1",
+		"react-bootstrap": "^2.10.10",
+		"react-dom": "^19.1.1",
+		"react-router": "^7.7.1"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.34.0",
+		"@types/node": "^24.2.0",
+		"@types/react": "^19.1.12",
+		"@types/react-dom": "^19.1.9",
+		"@types/webpack": "^5.28.5",
+		"@types/webpack-dev-server": "^4.7.2",
+		"@typescript-eslint/eslint-plugin": "^8.42.0",
+		"@typescript-eslint/parser": "^8.42.0",
+		"css-loader": "^7.1.2",
+		"eslint": "^9.34.0",
+		"eslint-config-airbnb-extended": "^2.2.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-import-resolver-typescript": "^4.4.4",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-prettier": "^5.5.4",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"globals": "^16.3.0",
+		"husky": "^9.1.7",
+		"jiti": "^2.5.1",
+		"lint-staged": "^16.1.6",
+		"prettier": "3.6.2",
+		"style-loader": "^4.0.0",
+		"ts-loader": "^9.5.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.42.0",
+		"webpack": "^5.101.0",
+		"webpack-cli": "^6.0.1",
+		"webpack-dev-server": "^5.2.2"
+	}
 }
